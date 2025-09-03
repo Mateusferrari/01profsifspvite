@@ -51,8 +51,6 @@ listaNova.push(prof)
 // colocando a nova lista atualizada no estado:
 setProfessores( listaNova )
 
-
-
  console.log("Professor adicionado:", prof)
 }
 return (
