@@ -4,12 +4,7 @@ import CampoTexto from "../campoTexto/campoTexto";
 import ListaSuspensa from "../ListaSuspensa/ListaSuspensa";
 import Botao from "../Botao/Botao";
 const Formulario = (props) => {
- const areas = [
- 'Progr. Básica',
- 'Progr. Web',
- 'Banco de Dados',
- 'Diversos'
- ]
+
  // Criando os estados...
  const [nome, setNome] = useState('')
  const [titulo, setTitulo] = useState('')
@@ -24,9 +19,12 @@ const Formulario = (props) => {
  "imagem" : imagem,
  "area" : area
  }
- )
- //console.log('Form foi submetido => ', nome, titulo, imagem, area)
- }
+);
+ setNome('');
+ setTitulo('');
+ setImagem('');
+ setArea('');
+}
  return (
  <section className="formulario">
  <form onSubmit={aoSalvar}>
@@ -51,7 +49,7 @@ valor={imagem}
  />
  <ListaSuspensa
  label="Áreas"
-itens={areas}
+itens={props.area}
  aoAlterado={valor => setArea(valor)}
  />
  <Botao>Criar Professor</Botao>
